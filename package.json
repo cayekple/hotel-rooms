@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "export": "next build",
-    "deploy": "next build && touch out/.nojekyll && gh-pages -d out -t true"
+    "deploy": "next build && touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@types/qrcode": "^1.5.6",
