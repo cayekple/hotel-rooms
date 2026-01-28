@@ -1,0 +1,2 @@
+:HL["/hotel-rooms/_next/static/chunks/18813bd49d1f862c.css","style"]
+0:{"buildId":"1wgyGW-xD-JPJPZSxMvOr","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
