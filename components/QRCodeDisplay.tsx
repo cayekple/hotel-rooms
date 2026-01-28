@@ -14,12 +14,12 @@ export default function QRCodeDisplay({ room, item }: QRCodeDisplayProps) {
 
   useEffect(() => {
     if (canvasRef.current) {
-      // Create URL with item details in hash for GitHub Pages deployment
+      // Create URL pointing to the item's dedicated page
       const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
       const basePath = process.env.NODE_ENV === 'production' ? '/hotel-rooms' : '';
-      const roomUrl = `${baseUrl}${basePath}/room/${room.id}#item-${item.id}`;
+      const itemUrl = `${baseUrl}${basePath}/item/${room.id}/${item.id}`;
 
-      QRCode.toCanvas(canvasRef.current, roomUrl, {
+      QRCode.toCanvas(canvasRef.current, itemUrl, {
         width: 220,
         margin: 2,
         color: {
@@ -38,7 +38,7 @@ export default function QRCodeDisplay({ room, item }: QRCodeDisplayProps) {
       </div>
       <div className="text-center">
         <p className="text-xs font-medium text-zinc-500 dark:text-zinc-500">
-          Scan to view room details
+          Scan to view item details
         </p>
       </div>
     </div>
