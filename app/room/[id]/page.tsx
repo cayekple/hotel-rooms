@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { hotelRooms } from "@/data/rooms";
 import QRCodeDisplay from "@/components/QRCodeDisplay";
 import ScrollToItem from "@/components/ScrollToItem";
+import PrintButton from "@/components/PrintButton";
+import "./print.css";
 
 export function generateStaticParams() {
   return hotelRooms.map((room) => ({
@@ -28,25 +30,29 @@ export default async function RoomPage({
       {/* Header */}
       <header className="bg-white dark:bg-zinc-900 shadow-sm border-b border-zinc-200 dark:border-zinc-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Link
-            href="/"
-            className="inline-flex items-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors group mb-4"
-          >
-            <svg
-              className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="flex items-center justify-between mb-4">
+            <Link
+              href="/"
+              className="no-print inline-flex items-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors group"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            Back to All Rooms
-          </Link>
+              <svg
+                className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              Back to All Rooms
+            </Link>
+
+            <PrintButton />
+          </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex items-center gap-4">
@@ -90,7 +96,7 @@ export default async function RoomPage({
             <div
               key={item.id}
               id={`item-${item.id}`}
-              className="bg-white dark:bg-zinc-900 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-zinc-200 dark:border-zinc-800 overflow-hidden scroll-mt-24"
+              className="item-card bg-white dark:bg-zinc-900 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-zinc-200 dark:border-zinc-800 overflow-hidden scroll-mt-24"
             >
               <div className="p-6 sm:p-8">
                 <div className="flex flex-col gap-6">
